@@ -19,10 +19,10 @@ const TodaysImage = (todaysImage: PostImage) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#000',
+    backgroundColor: 'rgb(25, 25, 112)',
     marginVertical: 16,
-    marginHorizontal: 10,
-    borderRadius: 32,
+    marginHorizontal: 1,
+    borderRadius: 15,
     padding: 16,
   },
   imageContainer: {

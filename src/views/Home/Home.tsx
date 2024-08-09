@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 15,
     paddingVertical: 10,
+    backgroundColor: '#000',
   },
 });
 

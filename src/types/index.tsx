@@ -8,3 +8,10 @@ export type PostImage = {
   title?: string;
   url?: string;
 };
+
+//Type para las rutas
+export type RootStackParams = {
+  //la pantalla no recibe parametros
+  Home: undefined;
+  Detail: undefined;
+};

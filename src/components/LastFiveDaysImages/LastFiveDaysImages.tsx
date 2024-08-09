@@ -23,15 +23,15 @@ const LastFiveDaysImages = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginVertical: 8,
+    marginVertical: 1,
   },
   title: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 20,
     marginBottom: 18,
   },
   contect: {
-    paddingHorizontal: 24,
+    paddingHorizontal: 10,
   },
 });
 

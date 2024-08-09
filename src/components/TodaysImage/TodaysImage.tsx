@@ -1,8 +1,28 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, Button} from 'react-native';
-import {PostImage} from '../../types';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+
+import {PostImage, RootStackParams} from '../../types';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+
+type PostImageNavigationsProps = NativeStackNavigationProp<
+  RootStackParams,
+  'Detail'
+>;
 
 const TodaysImage = (todaysImage: PostImage) => {
+  //metodo para cambiar de pantalla
+  const {navigate} = useNavigation<PostImageNavigationsProps>();
+  const handleViewPress = () => {
+    //nombre de pantalla y parametros
+    navigate('Detail', {
+      title: todaysImage.title,
+      date: todaysImage.date,
+      url: todaysImage.url,
+      explanation: todaysImage.explanation,
+    });
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -10,8 +30,10 @@ const TodaysImage = (todaysImage: PostImage) => {
       </View>
       <Text style={styles.title}>{todaysImage.title}</Text>
       <Text style={styles.date}>{todaysImage.date}</Text>
-      <View style={styles.containerButton}>
-        <Button title="Ver" />
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity onPress={handleViewPress} style={styles.button}>
+          <Text style={styles.buttonText}>Ver</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -22,18 +44,21 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgb(25, 25, 112)',
     marginVertical: 16,
     marginHorizontal: 1,
-    borderRadius: 15,
+    borderRadius: 10,
     padding: 16,
   },
   imageContainer: {
-    paddingVertical: 10,
+    borderColor: '#fff',
+    borderRadius: 100,
+    borderWidth: 1,
+    marginBottom: 10,
   },
   image: {
     width: '100%',
     height: 250,
     borderWidth: 2,
     borderBlockColor: '#fff',
-    borderRadius: 32,
+    borderRadius: 10,
   },
   title: {
     color: 'white',
@@ -44,8 +69,21 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 16,
   },
-  containerButton: {
+  buttonContainer: {
     alignItems: 'flex-end',
+  },
+  button: {
+    backgroundColor: 'transparent',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+    borderWidth: 2,
+    borderColor: 'white',
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 

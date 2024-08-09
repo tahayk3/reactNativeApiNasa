@@ -13,5 +13,5 @@ export type PostImage = {
 export type RootStackParams = {
   //la pantalla no recibe parametros
   Home: undefined;
-  Detail: undefined;
+  Detail: PostImage;
 };

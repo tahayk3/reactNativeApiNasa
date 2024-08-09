@@ -1,20 +1,38 @@
 import React from 'react';
-import {Text, View, StyleSheet, Button} from 'react-native';
-import {PostImage as PostImageType} from '../../types';
+import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
+import {PostImage as PostImageType, RootStackParams} from '../../types';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {useNavigation} from '@react-navigation/native';
+
+type PostImageNavigationsProps = NativeStackNavigationProp<
+  RootStackParams,
+  'Detail'
+>;
 
 const PostImage = (props: PostImageType) => {
+  const {navigate} = useNavigation<PostImageNavigationsProps>();
+  const handleViewPress = () => {
+    navigate('Detail', {
+      title: props.title,
+      date: props.date,
+      url: props.url,
+      explanation: props.explanation,
+    });
+  };
   return (
-    <View style={stytes.container}>
-      <Text style={stytes.title}>{props.title}</Text>
-      <Text style={stytes.date}>{props.date}</Text>
-      <View style={stytes.buttonContainer}>
-        <Button title="Ver"></Button>
+    <View style={styles.container}>
+      <Text style={styles.title}>{props.title}</Text>
+      <Text style={styles.date}>{props.date}</Text>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity onPress={handleViewPress} style={styles.button}>
+          <Text style={styles.buttonText}>Ver</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
 };
 
-const stytes = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     backgroundColor: '#235',
     borderRadius: 20,
@@ -29,9 +47,23 @@ const stytes = StyleSheet.create({
   },
   date: {
     color: 'white',
+    fontSize: 18,
   },
   buttonContainer: {
     alignItems: 'flex-end',
+  },
+  button: {
+    backgroundColor: 'transparent',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+    borderWidth: 2,
+    borderColor: 'white',
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 

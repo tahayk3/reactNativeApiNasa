@@ -10,7 +10,7 @@ const LastFiveDaysImages = ({
 }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Ultimos 5 dias</Text>
+      <Text style={styles.title}>Últimos 5 dias</Text>
       <ScrollView style={styles.contect}>
         {postImageProps?.map(item => (
           <PostImage key={`post-image-${item.title}`} {...item} />

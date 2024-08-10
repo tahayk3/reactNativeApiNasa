@@ -7,7 +7,7 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 type PostImageNavigationsProps = NativeStackNavigationProp<
   RootStackParams,
-  'Detail'
+  'Detalle'
 >;
 
 const TodaysImage = (todaysImage: PostImage) => {
@@ -15,7 +15,7 @@ const TodaysImage = (todaysImage: PostImage) => {
   const {navigate} = useNavigation<PostImageNavigationsProps>();
   const handleViewPress = () => {
     //nombre de pantalla y parametros
-    navigate('Detail', {
+    navigate('Detalle', {
       title: todaysImage.title,
       date: todaysImage.date,
       url: todaysImage.url,
@@ -41,11 +41,13 @@ const TodaysImage = (todaysImage: PostImage) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'rgb(25, 25, 112)',
+    backgroundColor: '#000',
     marginVertical: 16,
     marginHorizontal: 1,
-    borderRadius: 10,
     padding: 16,
+    borderRadius: 1,
+    borderWidth: 25,
+    borderBlockColor: '#fff',
   },
   imageContainer: {
     borderColor: '#fff',

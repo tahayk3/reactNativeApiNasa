@@ -5,7 +5,9 @@ const Header = () => {
   return (
     <View style={styles.container}>
       <View style={styles.leftContainer}>
-        <Text style={styles.title}>Explorar</Text>
+        <Text style={styles.title}>
+          Información extraída de la api de la NASA: imagen del día
+        </Text>
       </View>
       <View style={styles.rightCotainer}>
         <Image
@@ -33,6 +35,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     color: '#fff',
+    fontWeight: 'bold',
   },
   logo: {
     width: 60,

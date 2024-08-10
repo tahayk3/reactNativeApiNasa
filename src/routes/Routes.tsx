@@ -13,7 +13,7 @@ const Stack = createNativeStackNavigator<RootStackParams>();
 //Cada ruta/pantall se puede estilizar para modificar su apariencia por defecto
 const routeScreenDefaultOption = {
   headerStyle: {
-    backgroundColor: 'rgba(7,26,93,255)',
+    backgroundColor: '#003D6D',
   },
   headerTitleStyle: {
     color: '#fff',
@@ -23,15 +23,15 @@ const routeScreenDefaultOption = {
 const Routes = () => (
   <NavigationContainer>
     {/*/ Con initialRouteName, indicamos la ruta/pantalla de inicio */}
-    <Stack.Navigator initialRouteName="Home">
+    <Stack.Navigator initialRouteName="Inicio">
       {/*/ <Stack.Screen> es un componente que es una ruta */}
       <Stack.Screen
-        name="Home"
+        name="Inicio"
         component={Home}
         options={routeScreenDefaultOption}
       />
       <Stack.Screen
-        name="Detail"
+        name="Detalle"
         component={Detail}
         options={routeScreenDefaultOption}
       />

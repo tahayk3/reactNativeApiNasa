@@ -5,12 +5,14 @@ import {useRoute} from '@react-navigation/native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParams} from '../../types';
 import Header from '../../components/Header';
+import StarryBackground from '../../components/StarryBackground';
 const Detail = () => {
   const {
     params: {title, url, explanation, date},
-  } = useRoute<NativeStackScreenProps<RootStackParams, 'Detail'>['route']>();
+  } = useRoute<NativeStackScreenProps<RootStackParams, 'Detalle'>['route']>();
   return (
     <View style={styles.container}>
+      <StarryBackground />
       <Header />
       <View style={styles.content}>
         <Image source={{uri: url}} style={styles.image}></Image>
@@ -28,10 +30,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 16,
-    backgroundColor: 'rgba(7,26,93,255)',
+    backgroundColor: '#000',
+    position: 'relative',
   },
   content: {
-    backgroundColor: '#2c449d',
+    backgroundColor: '#003D6D',
     borderRadius: 15,
     padding: 5,
     marginBottom: 150,

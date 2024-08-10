@@ -6,13 +6,13 @@ import {useNavigation} from '@react-navigation/native';
 
 type PostImageNavigationsProps = NativeStackNavigationProp<
   RootStackParams,
-  'Detail'
+  'Detalle'
 >;
 
 const PostImage = (props: PostImageType) => {
   const {navigate} = useNavigation<PostImageNavigationsProps>();
   const handleViewPress = () => {
-    navigate('Detail', {
+    navigate('Detalle', {
       title: props.title,
       date: props.date,
       url: props.url,
@@ -34,7 +34,7 @@ const PostImage = (props: PostImageType) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#235',
+    backgroundColor: '#003D6D',
     borderRadius: 20,
     marginBottom: 12,
     padding: 16,

@@ -12,6 +12,6 @@ export type PostImage = {
 //Type para las rutas
 export type RootStackParams = {
   //la pantalla no recibe parametros
-  Home: undefined;
-  Detail: PostImage;
+  Inicio: undefined;
+  Detalle: PostImage;
 };

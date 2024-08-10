@@ -5,6 +5,7 @@ import fetchApi from '../../utils/fetch';
 import TodaysImage from '../../components/TodaysImage';
 import {format, sub} from 'date-fns';
 import LastFiveDaysImages from '../../components/LastFiveDaysImages';
+import StarryBackground from '../../components/StarryBackground';
 
 const Home = () => {
   /*constante para manejar el estado, en este caso, se maneja de manera local(no hacia otros componentes), de ser
@@ -51,6 +52,7 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
+      <StarryBackground />
       <Header />
       <TodaysImage {...todaysImage} />
       <LastFiveDaysImages postImageProps={fiveDaysAgoImage} />
@@ -64,6 +66,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 10,
     backgroundColor: '#000',
+    position: 'relative', // Asegúrate de que el fondo cubra todo
   },
 });
 
